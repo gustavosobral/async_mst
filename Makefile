@@ -5,3 +5,6 @@ all: src/main.c
 
 clean:
 	rm -rf main
+
+get-deps:
+	sudo apt-get install libcr-dev mpich2 mpich2-doc
