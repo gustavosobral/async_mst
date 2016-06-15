@@ -1,7 +1,7 @@
-CC=mpicc
+MPICPPC=mpic++
 
-all: src/main.c
-	$(CC) src/*.c -o main
+all: src/main.cpp
+	$(MPICPPC) src/*.cpp -o main
 
 clean:
 	rm -rf main
