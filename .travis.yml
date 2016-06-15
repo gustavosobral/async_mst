@@ -1,3 +1,5 @@
 language: c
-install: make get-deps
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libcr-dev mpich2 mpich2-doc
 script: make
