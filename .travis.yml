@@ -1,5 +1,7 @@
-language: c
+language: cpp
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libcr-dev mpich2 mpich2-doc
-script: make
+script: 
+  - make
+  - mpirun -np 30 main 10

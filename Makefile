@@ -1,7 +1,7 @@
-CC=mpicc
+MPICPPC=mpicxx
 
-all: src/main.c
-	$(CC) src/*.c -o main
+all: src/main.cc
+	$(MPICPPC) src/*.cc -o main
 
 clean:
 	rm -rf main
