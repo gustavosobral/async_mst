@@ -36,9 +36,16 @@ int main(int argc, char* argv[]) {
   int buffer;
   int num_procs;
   int ack_count;
+  int num_rounds;
   int safety_count;
   MPI_Status status;
   vector<int> ids_tosend;
+
+  if(argc == 2) {
+    num_rounds = atoi(argv[1]);
+  } else {
+    num_rounds = ROUND_MAX;
+  }
 
   srand (time(NULL));
 
@@ -46,7 +53,7 @@ int main(int argc, char* argv[]) {
   MPI_Comm_rank(MPI_COMM_WORLD, &my_id);
   MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
 
-  while(round < ROUND_MAX) {
+  while(round < num_rounds) {
     safety_count = 0;
     buffer = (round * 100) + my_id;
     generate_ids(&ids_tosend, my_id, num_procs);
